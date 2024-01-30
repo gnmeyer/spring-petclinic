@@ -31,12 +31,12 @@ jobs:
         run: ./mvnw -B package
       - name: Set environment
         run: | 
+          cat ~/updated-settings.xml > ~/.m2/settings.xml
           export USERNAME=${{secrets.username}}
           export PASSWORD=${{secrets.password}}
           USERNAME_VALUE=$(echo $USERNAME)
           PASSWORD_VALUE=$(echo $PASSWORD)
-          sed -i "s/\${USERNAME}/$USERNAME_VALUE/g" ~/updated-settings.xml
-          sed -i "s/\${PASSWORD}/$PASSWORD_VALUE/g" ~/updated-settings.xml
-          cat ~/updated-settings.xml > ~/.m2/settings.xml
+          sed -i "s/\${USERNAME}/$USERNAME_VALUE/g" ~/.m2/settings.xml
+          sed -i "s/\${PASSWORD}/$PASSWORD_VALUE/g" ~/.m2/settings.xml
       - name: Nexus Repo Publish
         run: mvn clean deploy
