@@ -30,4 +30,4 @@ jobs:
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
       - name: Nexus Repo Publish
-        run: curl -v -F r=releases -F hasPom=true -F e=jar -F file=@~/actions-runner/_work/spring-petclinic/spring-petclinic/pom.xml -F file=~/actions-runner/_work/spring-petclinic/spring-petclinic/target/spring-petclinic-3.1.0-SNAPSHOT.jar -u admin:admin123 http://192.168.91.194:8081/repository/maven-central/
+        run: mvnw clean deploy
