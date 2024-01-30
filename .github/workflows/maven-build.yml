@@ -30,4 +30,4 @@ jobs:
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
       - name: Nexus Repo Publish
-        run: mvnw clean deploy
+        run: mvn clean deploy
