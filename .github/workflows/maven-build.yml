@@ -33,4 +33,4 @@ jobs:
         run: | 
           cat ~/updated-settings.xml > ~/.m2/settings.xml
       - name: Nexus Repo Publish
-        run: mvn clean deploy
+        run: mvn deploy
