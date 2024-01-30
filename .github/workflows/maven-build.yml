@@ -29,5 +29,7 @@ jobs:
           cache: maven
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
+      - name: Update settings
+        run: cat ~/updated-settings.xml > ~/.m2/settings.xml
       - name: Nexus Repo Publish
         run: mvn clean deploy
