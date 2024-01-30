@@ -29,6 +29,10 @@ jobs:
           cache: maven
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
+      - name: Set username
+        run: export USERNAME=${secrets.username}
+      - name: Set password
+        run: export PASSWORD=${secrets.password}
       - name: Update settings
         run: cat ~/updated-settings.xml > ~/.m2/settings.xml
       - name: Nexus Repo Publish
