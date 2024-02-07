@@ -28,7 +28,7 @@ jobs:
           architecture: 'aarch64'
           cache: maven
       - name: Build with Maven Wrapper
-        run: ./mvnw -B package
+        run: ./mvnw -B -X package
       - name: Update settings
         run: | 
           cat ~/updated-settings.xml > ~/.m2/settings.xml
