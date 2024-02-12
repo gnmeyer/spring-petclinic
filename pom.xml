@@ -22,7 +22,7 @@
         <snapshotRepository>
             <id>snapshot-repo</id>
             <name>Internal Snapshot Repository</name>
-            <url>http://nexus:8081/repository/maven-snapshots/</url>
+            <url>http://10.244.0.4:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
   
